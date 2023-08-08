@@ -1,0 +1,475 @@
+/*-------------CSS REST--------------*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+
+  /* font */
+}
+
+/* A elements that don't have a class get default styles */
+a {
+  text-decoration: none;
+}
+/* a:not([class]) {
+  text-decoration-skip-ink: auto;
+} */
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/**/
+:root {
+  --col-1: 8.33%;
+  --col-2: 16.66%;
+  --col-3: 25%;
+  --col-4: 33.33%;
+  --col-5: 41.66%;
+  --col-6: 50%;
+  --col-7: 58.33%;
+  --col-8: 66.66%;
+  --col-9: 75%;
+  --col-10: 83.33%;
+  --col-11: 91.66%;
+  --col-12: 100%;
+
+  --color1: #062d31;
+  --color2: #60edb3;
+  --color3: #f5f1ea;
+  --color4: #ebebeb;
+  --font-color: #000;
+}
+
+.primary-btn,
+.secondary-btn {
+  border: 1px solid transparent;
+  outline: 0;
+  background-color: var(--color2);
+  padding: 10px 32px;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  text-align: center;
+  /* max-width: fit-content; */
+}
+
+.primary-btn:hover {
+  background-color: var(--color1);
+  color: #fff;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: var(--font-color);
+  border: 2px solid var(--color1);
+}
+.secondary-btn:hover {
+  border-color: currentColor;
+  background-color: var(--color1);
+  color: #fff;
+}
+
+/*---------Header & Navigation bar-------------*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 14px 16px; */
+}
+header h1 {
+  padding: 0 16px;
+}
+header h1 a {
+  color: var(--color1);
+}
+
+.menu {
+  position: relative;
+}
+
+.menu .icon {
+  display: block;
+  color: var(--col-1);
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 2rem;
+  /* font-size: 25px; */
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+.menu .icon:hover {
+  color: var(--color2);
+}
+.menu .links {
+  background-color: var(--color3);
+  position: absolute;
+  right: 0;
+  width: 100vw;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+.menu .links a {
+  display: block;
+  width: 100%;
+  padding: 14px 0px;
+  color: #000;
+  text-align: center;
+  font-size: 1.1rem;
+  transition: all 0.2s ease-in;
+}
+.menu .links a:hover {
+  color: var(--color1);
+  /* font-weight: bold; */
+  background-color: var(--color2);
+}
+
+.menu .show {
+  max-height: 100vh;
+  height: fit-content;
+  transition: max-height 0.3s ease-in-out;
+  /* max-width: ; */
+}
+
+/*---------Hero section-------------*/
+.hero {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color3);
+}
+.hero .content {
+  padding: var(--col-1);
+}
+.hero .content > *:not(:last-child) {
+  margin-bottom: 16px;
+}
+.hero .content h1 {
+  font-size: 3rem;
+}
+.hero .content p {
+  font-size: 1.2rem;
+}
+
+/* -------------- Offers------------- */
+.offers {
+  padding: calc(var(--col-1) / 2);
+  display: grid;
+  gap: 16px;
+}
+.offer-card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.offer-card img {
+  width: 100%;
+  /* width: 438px; */
+  height: 456px;
+}
+.offer-card .info h3 {
+  font-weight: 500;
+}
+.offer-card a {
+  color: var(--font-color);
+  text-decoration: underline;
+  font-size: 1rem;
+}
+.offer-card a:hover {
+  /* color: #3d3d3d; */
+  font-weight: bold;
+}
+
+/*--------Category----------*/
+.category {
+  padding: calc(var(--col-1) / 2) var(--col-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.category h1 {
+  text-align: center;
+}
+
+.cat-containers {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.category-card {
+  display: block;
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 30%;
+}
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.category-card:hover img {
+  transform: scale(1.1);
+}
+.category-card:hover span {
+  text-decoration: underline;
+}
+
+/*----------Store------------*/
+.store {
+  width: 100%;
+  /* aspect-ratio: 16 / 9; */
+  max-height: 500px;
+  /* height: 80vh; */
+  position: relative;
+  background-color: #ddd;
+  margin-bottom: var(--col-1);
+  overflow: hidden;
+}
+.store img {
+  width: 100%;
+  height: auto;
+}
+.store .message {
+  background-color: var(--color4);
+  padding: 32px;
+  max-width: 400px;
+  height: auto;
+  /* position: absolute; */
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ----------- footer ---------- */
+footer {
+  background-color: var(--color1);
+  color: #fff;
+  padding: calc(var(--col-1) / 2) var(--col-1);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  gap: 16px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+form input {
+  /* display: block; */
+  margin: 16px 0;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  outline: 0;
+  padding: 8px 20px;
+}
+input:focus {
+  border-color: var(--color2);
+}
+
+.social-media {
+  font-size: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.copy nav a {
+  display: inline-block;
+  padding: 14px 14px;
+  color: #fff;
+  text-align: center;
+  transition: all 0.2s ease-in;
+}
+
+.copy nav a:hover {
+  color: var(--color2);
+}
+
+footer .primary-btn:hover {
+  border: 1px solid var(--color2);
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .offers {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  /*--------Category----------*/
+
+  .cat-containers {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .category-card {
+    width: var(--col-5);
+  }
+
+  /*-----------Store---------*/
+  .store {
+    position: relative;
+  }
+  .store img {
+    width: 100%;
+    height: 100%;
+  }
+  .store .message {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  /*---------Header & Navigation bar-------------*/
+  header {
+    padding: 0px var(--col-1);
+  }
+
+  .menu .icon {
+    display: none;
+  }
+  .menu .links {
+    background-color: transparent;
+    position: relative;
+    width: auto;
+    max-height: fit-content;
+  }
+  .menu .links a {
+    display: inline-block;
+    width: auto;
+    padding: 14px 16px;
+  }
+  /*---------Hero section-------------*/
+  .hero {
+    flex-direction: row;
+  }
+  .hero > * {
+    width: var(--col-6);
+  }
+
+  /* -------------- category ------------- */
+  .cat-containers {
+    flex-wrap: nowrap;
+  }
+  /* footer */
+  /* .contact {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .contact > * {
+    width: 49%;
+  } */
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
